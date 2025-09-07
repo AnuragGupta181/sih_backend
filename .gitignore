@@ -1,2 +1,5 @@
-myenv
+myenv/
+__pycache__/
+*.pyc
+*.pkl
 .env

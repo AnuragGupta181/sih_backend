@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: staybite-backend
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -k uvicorn.workers.UvicornWorker app.main:app -b 0.0.0.0:$PORT"
+    envVars:
+      - key: GROQ_API_KEY
+        fromSecret: GROQ_API_KEY   # define the actual value in Render Dashboard Secrets
