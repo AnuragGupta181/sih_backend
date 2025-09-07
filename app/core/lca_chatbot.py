@@ -1,0 +1,82 @@
+# app/core/lca_chatbot.py
+"""
+Chat-based insights generator using Groq LLM.
+"""
+
+from langchain.prompts import PromptTemplate
+from langchain_groq import ChatGroq
+from langchain.schema import HumanMessage
+from app.config import get_settings
+
+settings = get_settings()
+llm = ChatGroq(model="llama-3.1-8b-instant", api_key=settings.GROQ_API_KEY)
+
+lca_prompt = PromptTemplate(
+    template="""
+You are an LCA Insights Expert for companies. You are NOT explaining what LCA is. 
+You are ONLY providing actionable, data-driven insights and recommendations based on the company's input data. 
+Your goal is to help the company **reduce GHG emissions, optimize resource use, and save costs**.
+
+Use the following data:
+
+{sample_row}
+
+Instructions:
+
+1. Calculate total GHG emissions, energy consumption, water use, and any other relevant metrics.
+2. Highlight any inconsistencies in the data if present.
+3. Provide specific suggestions for improvement, for example:
+   - Using alternative transport (truck → rail) and estimating possible cost or emission savings.
+   - Optimizing energy efficiency.
+   - Recycling strategies or circularity improvements.
+4. Provide a concise summary table of key metrics at the top.
+5. Give recommendations in numbered actionable points.
+
+Respond in a professional, business-oriented style.
+
+Question:
+{question}
+
+Answer:
+""",
+    input_variables=["sample_row", "question"]
+)
+
+
+def lca_chat(sample_row: dict, question: str) -> str:
+    """
+    Generates insights from the LCA data using Groq LLM.
+    """
+    prompt_text = lca_prompt.format(sample_row=sample_row, question=question)
+    messages = [HumanMessage(content=prompt_text)]
+    response = llm.invoke(messages)
+    return response.content
+
+
+
+# if __name__ == "__main__":
+#     sample_row = {
+#         "Process_Type": "Primary",
+#         "Metal": "Aluminium",
+#         "Energy_MJ_per_kg": 210.5,
+#         "Quantity_kg": 1200,
+#         "Energy_MJ_total": 0.0,
+#         "Transport_km": 150.0,
+#         "Transport_Mode": "Truck",
+#         "Transport_emissions_kgCO2": 45.7,
+#         "Water_use_m3_per_ton": 6.8,
+#         "End_of_Life": "Recycle",
+#         "Circularity_option": "Closed-loop",
+#         "Process_emissions_kgCO2": 520.3,
+#         "Total_emissions_kgCO2": 0.0,
+#         "Emission_factor_kgCO2_per_MJ": 0.0021
+#     }
+
+#     print("Welcome to the LCA Chatbot!")
+#     sample_row = predictLca(sample_row)
+#     while True:
+#         user_question = input("\nEnter your LCA question (or 'exit' to quit): ")
+#         if user_question.lower() == "exit":
+#             break
+#         answer = lca_chat(sample_row, user_question)
+#         print("\nLCA Report:\n", answer)
