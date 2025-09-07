@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: staybite-backend
+    name: sih-backend
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
