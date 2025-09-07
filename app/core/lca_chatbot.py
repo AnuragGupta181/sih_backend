@@ -53,74 +53,75 @@ def lca_chat(sample_row: dict, question: str) -> str:
     return response.content
 
 
-
-# if __name__ == "__main__":
-#     sample_row = 
-#     {
-#         "Process_Type": "Primary",
-#         "Metal": "Aluminium",
-#         "Energy_MJ_per_kg": 210.5,
-#         "Quantity_kg": 1200,
-#         "Energy_MJ_total": 0.0,
-#         "Transport_km": 150.0,
-#         "Transport_Mode": "Truck",
-#         "Transport_emissions_kgCO2": 45.7,
-#         "Water_use_m3_per_ton": 6.8,
-#         "End_of_Life": "Recycle",
-#         "Circularity_option": "Closed-loop",
-#         "Process_emissions_kgCO2": 520.3,
-#         "Total_emissions_kgCO2": 0.0,
-#         "Emission_factor_kgCO2_per_MJ": 0.0021
-#     }
-
-
-#trial
-
-# {
-#     "Process_Type": "Primary",
-#     "Metal": "Aluminium",
-#     "Energy_MJ_per_kg": 210.5,
-#     "Quantity_kg": 1200,
-#     "Energy_MJ_total": 0.0,
-#     "Transport_km": 150.0,
-#     "Transport_Mode": "Truck",
-#     "Transport_emissions_kgCO2": 45.7,
-#     "Water_use_m3_per_ton": 6.8,
-#     "End_of_Life": "Recycle",
-#     "Circularity_option": "Closed-loop",
-#     "Process_emissions_kgCO2": 520.3,
-#     "Total_emissions_kgCO2": 0.0,
-#     "Emission_factor_kgCO2_per_MJ": 0.0021
-# }
-
-#     print("Welcome to the LCA Chatbot!")
-#     sample_row = predictLca(sample_row)
-#     while True:
-#         user_question = input("\nEnter your LCA question (or 'exit' to quit): ")
-#         if user_question.lower() == "exit":
-#             break
-#         answer = lca_chat(sample_row, user_question)
-#         print("\nLCA Report:\n", answer)
+'''
+if __name__ == "__main__":
+    sample_row = 
+    {
+        "Process_Type": "Primary",
+        "Metal": "Aluminium",
+        "Energy_MJ_per_kg": 210.5,
+        "Quantity_kg": 1200,
+        "Energy_MJ_total": 0.0,
+        "Transport_km": 150.0,
+        "Transport_Mode": "Truck",
+        "Transport_emissions_kgCO2": 45.7,
+        "Water_use_m3_per_ton": 6.8,
+        "End_of_Life": "Recycle",
+        "Circularity_option": "Closed-loop",
+        "Process_emissions_kgCO2": 520.3,
+        "Total_emissions_kgCO2": 0.0,
+        "Emission_factor_kgCO2_per_MJ": 0.0021
+    }
 
 
+trial
+
+{
+    "Process_Type": "Primary",
+    "Metal": "Aluminium",
+    "Energy_MJ_per_kg": 210.5,
+    "Quantity_kg": 1200,
+    "Energy_MJ_total": 0.0,
+    "Transport_km": 150.0,
+    "Transport_Mode": "Truck",
+    "Transport_emissions_kgCO2": 45.7,
+    "Water_use_m3_per_ton": 6.8,
+    "End_of_Life": "Recycle",
+    "Circularity_option": "Closed-loop",
+    "Process_emissions_kgCO2": 520.3,
+    "Total_emissions_kgCO2": 0.0,
+    "Emission_factor_kgCO2_per_MJ": 0.0021
+}
+
+    print("Welcome to the LCA Chatbot!")
+    sample_row = predictLca(sample_row)
+    while True:
+        user_question = input("\nEnter your LCA question (or 'exit' to quit): ")
+        if user_question.lower() == "exit":
+            break
+        answer = lca_chat(sample_row, user_question)
+        print("\nLCA Report:\n", answer)
 
 
-# {
-#   "sample_row": {
-#     "Process_Type": "Primary",
-#     "Metal": "Aluminium",
-#     "Energy_MJ_per_kg": 210.5,
-#     "Quantity_kg": 1200,
-#     "Energy_MJ_total": 252600.0,
-#     "Transport_km": 150.0,
-#     "Transport_Mode": "Truck",
-#     "Transport_emissions_kgCO2": 45.7,
-#     "Water_use_m3_per_ton": 6.8,
-#     "End_of_Life": "Recycle",
-#     "Circularity_option": "Closed-loop",
-#     "Process_emissions_kgCO2": 520.3,
-#     "Total_emissions_kgCO2": 1096.46,
-#     "Emission_factor_kgCO2_per_MJ": 0.0021
-#   },
-#   "question": "Calculate Energy_MJ_total and Total_emissions_kgCO2"
-# }
+
+
+{
+  "sample_row": {
+    "Process_Type": "Primary",
+    "Metal": "Aluminium",
+    "Energy_MJ_per_kg": 210.5,
+    "Quantity_kg": 1200,
+    "Energy_MJ_total": 252600.0,
+    "Transport_km": 150.0,
+    "Transport_Mode": "Truck",
+    "Transport_emissions_kgCO2": 45.7,
+    "Water_use_m3_per_ton": 6.8,
+    "End_of_Life": "Recycle",
+    "Circularity_option": "Closed-loop",
+    "Process_emissions_kgCO2": 520.3,
+    "Total_emissions_kgCO2": 1096.46,
+    "Emission_factor_kgCO2_per_MJ": 0.0021
+  },
+  "question": "Calculate Energy_MJ_total and Total_emissions_kgCO2"
+}
+'''
