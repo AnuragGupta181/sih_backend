@@ -15,7 +15,9 @@ def predictLca(sample_row: dict) -> dict:
 
     X_input = X.reshape(1, -1)
     mask_input = mask.reshape(1, -1)
+    print("🔍 Model input shape:", X_input.shape, mask_input.shape)
     pred = model.predict([X_input, mask_input])
+    print("✅ Raw prediction:", pred)
 
     result = {}
     columns = [
