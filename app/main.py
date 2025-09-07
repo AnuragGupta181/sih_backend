@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import predict, insight, health
+from app.routers import predict, insight, health
 
 app = FastAPI(title="LCA Backend API", version="1.0.0")
 
