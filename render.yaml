@@ -3,7 +3,7 @@ services:
     name: sih-backend
     env: python
     plan: free
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
     startCommand: "gunicorn -k uvicorn.workers.UvicornWorker app.main:app -b 0.0.0.0:$PORT"
     envVars:
       - key: GROQ_API_KEY

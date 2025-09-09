@@ -21,21 +21,10 @@ class LCAInput(BaseModel):
     Emission_factor_kgCO2_per_MJ: float | None = None
 
 @router.post("/")
-# def predict_lca(data: LCAInput):
-#     try:
-#         sample_row = data.dict()
-#         prediction = predictLca(sample_row)
-#         return {"predicted_data": prediction}
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
 def predict_lca(data: LCAInput):
     try:
         sample_row = data.dict()
-        print("🚀 Incoming request:", sample_row)  # Debug
         prediction = predictLca(sample_row)
-        print("✅ Prediction:", prediction)  # Debug
         return {"predicted_data": prediction}
     except Exception as e:
-        print("❌ Error in /predict:", e)  # Debug
         raise HTTPException(status_code=500, detail=str(e))

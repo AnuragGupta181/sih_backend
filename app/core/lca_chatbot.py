@@ -61,7 +61,7 @@ if __name__ == "__main__":
         "Metal": "Aluminium",
         "Energy_MJ_per_kg": 210.5,
         "Quantity_kg": 1200,
-        "Energy_MJ_total": 0.0,
+        "Energy_MJ_total": None,
         "Transport_km": 150.0,
         "Transport_Mode": "Truck",
         "Transport_emissions_kgCO2": 45.7,
@@ -69,7 +69,7 @@ if __name__ == "__main__":
         "End_of_Life": "Recycle",
         "Circularity_option": "Closed-loop",
         "Process_emissions_kgCO2": 520.3,
-        "Total_emissions_kgCO2": 0.0,
+        "Total_emissions_kgCO2": None,
         "Emission_factor_kgCO2_per_MJ": 0.0021
     }
 
@@ -81,7 +81,7 @@ trial
     "Metal": "Aluminium",
     "Energy_MJ_per_kg": 210.5,
     "Quantity_kg": 1200,
-    "Energy_MJ_total": 0.0,
+    "Energy_MJ_total": null,
     "Transport_km": 150.0,
     "Transport_Mode": "Truck",
     "Transport_emissions_kgCO2": 45.7,
@@ -89,7 +89,7 @@ trial
     "End_of_Life": "Recycle",
     "Circularity_option": "Closed-loop",
     "Process_emissions_kgCO2": 520.3,
-    "Total_emissions_kgCO2": 0.0,
+    "Total_emissions_kgCO2": null,
     "Emission_factor_kgCO2_per_MJ": 0.0021
 }
 
