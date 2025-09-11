@@ -25,8 +25,9 @@ class LCAInput(BaseModel):
 
 def predict_lca(data: LCAInput):
     sample_row = data.dict()
+    print("Input LCA Data for Prediction:\n", sample_row)
     full_row = predictLca(sample_row)
-    # print("Predicted/Completed LCA Data:\n", full_row)
+    print("Predicted/Completed LCA Data:\n", full_row)
     return full_row
 
 
@@ -40,6 +41,7 @@ def generate_insights(request: InsightRequest):
     try:
         
         insights = lca_chat(predict_lca(request.sample_row), request.question)
+        print ("Generated Insights:\n", insights)
         return {"insights": insights}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
